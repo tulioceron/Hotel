@@ -67,7 +67,7 @@ function leerReservas(){
 		tx.executeSql('SELECT * FROM reservaciones',[],function(tx1,resultado){
 			var largo = resultado.rows.lehgth;
 			if(largo != 0){
-				for(i=0;i<larg;i++){
+				for(i=0;i<largo;i++){
 					reservarHb(resultado.rows.item(i).tipoHabitacion,resultado.rows.item(i).personas,resultado.rows.item(i).habitaciones,resultado.rows.item(i).dias);
 				}
 			}
