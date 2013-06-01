@@ -1,0 +1,153 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>HotelV 1.0</title>
+<link href="css/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="css/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
+<script src="phonegap.js"></script>
+<script src="js/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="js/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<script src="js/API/eventos.js" type="text/javascript"></script>
+<script src="js/API/servidor.js" type="text/javascript"></script>
+<script src="js/API/dispositivo.js" type="text/javascript"></script>
+<script src="js/API/captura.js" type="text/javascript"></script>
+<script src="js/API/archivos.js" type="text/javascript"></script>
+<script src="js/API/almacenamiento.js" type="text/javascript"></script>
+<style>
+	.ui-collapsible-content { overflow: auto; height: 250px; text-align: justify;}
+</style>
+</head> 
+<body> 
+
+<div data-role="page" id="page">
+	<div data-role="header">
+		<h1>Hotel</h1>
+	</div>
+	<div data-role="content">	
+		<ul data-role="listview" data-inset="true">
+			<li><a href="#nr1">Nueva Reservación</a></li>
+            <li><a href="#historial">Reservaciones Ant</a></li>
+			<li><a href="#priv">Privacidad</a></li>
+		</ul>	
+	</div>
+	<div data-role="footer" data-position="fixed">
+    	<a href="#nosotros" data-role="button" data-theme="b" data-transition="slideup">Nosotros</a>
+		<span style="font: 8pt Arial;">Todos los derechos reservados &copy;</span>
+	</div>
+</div>
+
+<div data-role="page" id="nosotros">
+	<div data-role="header">
+		<h1>Nosotros</h1>
+        <a data-direction="reverse" data-rel="back">Atrás</a>
+	</div>
+	<div data-role="content" style="text-align: justify;">	
+		jQuery mobile framework takes the "write less, do more" mantra to the next level: Instead of writing unique apps for each mobile device or OS, the jQuery mobile framework allows you to design a single highly-branded web site or application that will work on all popular smartphone, tablet, and desktop platforms. Device support.		
+	</div>
+</div>
+
+<div data-role="page" id="priv">
+	<div data-role="header">
+		<h1>Privacidad</h1>
+        <a data-role="button" data-rel="back" data-direction="reverse">Atrás</a>
+	</div>
+	<div data-role="content" style="text-align: justify;">	
+		jQuery mobile framework takes the "write less, do more" mantra to the next level: Instead of writing unique apps for each mobile device or OS, the jQuery mobile framework allows you to design a single highly-branded web site or application that will work on all popular smartphone, tablet, and desktop platforms. Device support.	
+	</div>
+</div>
+
+<div data-role="page" id="login">
+	<div data-role="header">
+		<h1>Registro</h1>
+	</div>
+	<div data-role="content">	
+		<ul data-role="listview" data-inset="true" data-dividertheme="a" data-theme="c">
+        	<li data-role="list-divider">Datos Usuario</li>
+            <li><input type="text" id="regNom" placeholder="Nombre" /></li>
+            <li><input type="email" id="regMail" placeholder="Correo Electrónico" /></li>
+            <li><input type="tel" id="regTel" placeholder="Teléfono" /></li>
+            <li><a href="#" id="regFoto">Tomar Foto</a></li>
+        </ul>
+        <a href="#" data-role="button" id="regEnviar" data-theme="a">Registrar</a>
+	</div>
+</div>
+
+<div data-role="page" id="historial">
+	<div data-role="header">
+    	<h1>Historial</h1>
+        <a data-role="button" data-rel="back" data-direction="reverse">Atrás</a>
+    </div>
+    <div data-role="content">
+
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li>
+                    <a href="#nosotros" data-transition="pop" data-icon="info">
+                        Nosotros
+                    </a>
+                </li>
+                <li>
+                    <a href="#nr1" data-transition="fade" data-icon="grid">
+                        Reservar
+                    </a>
+                </li>
+                <li>
+                    <a href="#priv" data-transition="flip" data-icon="star">
+                        Privacidad
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div data-role="page" id="nr1">
+	<div data-role="header">
+		<h1>Nueva Reserva</h1>
+	</div>
+	<div data-role="content">	
+		<ul data-role="listview" data-inset="true" data-dividertheme="a" data-theme="c">
+        	<li data-role="list-divider">Tipo de Habitación</li>
+            <li><a href="#">Habitación Sencilla</a></li>
+            <li><a href="#">Habitación Doble</a></li>
+            <li><a href="#">Suites</a></li>
+        </ul>
+	</div>
+</div>
+<div data-role="page" id="nr2">
+	<div data-role="header">
+		<h1>Nueva Reserva</h1>
+	</div>
+	<div data-role="content">	
+		<ul data-role="listview" data-inset="true" data-dividertheme="a" data-theme="c">
+        	<li data-role="list-divider">Datos de Reserva</li>
+            <li>Personas: <br><select>
+            	<option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select></li>
+            <li>Habitaciones: <br><select>
+            	<option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select></li>
+            <li>Días: <br><select>
+            	<option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select></li>
+        </ul>
+        <a href="#" data-role="button" data-theme="a">Reservar</a>
+	</div>
+</div>
+
+</body>
+</html>
