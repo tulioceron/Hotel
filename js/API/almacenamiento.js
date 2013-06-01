@@ -35,10 +35,10 @@ function reservaInt(t,p,h,d){
 function leerHistorial(){
 	accesoBD().transaction(function(tx){
 		tx.executeSql('SELECT * FROM historial',[],function(tx1,resultado){
-			var largo = resultado.rows.lehgth;
+			var largo = resultado.rows.length;
 			if(largo != 0){
 				$('#historial div[data-role=content]').html('');
-				for(i=0;i<larg;i++){
+				for(i=0;i<largo;i++){
 					$('#historial div[data-role=content]').append('<div data-role="collapsible-set">'+
             '<div data-role="collapsible" data-collapsed="true">'+
                 '<h3>'+
